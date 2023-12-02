@@ -7,6 +7,7 @@ const addNote = (title, body) => {
     const notes = loadNotes(); // Load existing notes from the file
     const duplicateNote = notes.find((note) => note.title === title); // Check for duplicate note titles
 
+
     if (!duplicateNote) { // If no duplicate, add the new note
         notes.push({
             title: title,
@@ -49,7 +50,7 @@ const readNote = (title) => {
     const note = notes.find((note) => note.title === title); // Find the note with the specified title
 
     if (note) {
-        console.log(chalk.inverse(note.title));
+        console.log(chalk.green.inverse(note.title));
         console.log(note.body);
     } else {
         console.log(chalk.red.inverse('Note not found!')); // Display error if the note is not found

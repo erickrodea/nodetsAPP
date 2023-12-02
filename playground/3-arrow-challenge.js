@@ -1,10 +1,8 @@
 //
-// Goal: Create method to get incomplete tasks
+// Goal: Create a method to get incomplete tasks
 //
-// 1. Define getTasksToDo method
-// 2. Use filter to to return just the incompleted tasks (arrow function)
-// 3. Test your work by running the script
 
+// Object definition representing a list of tasks
 const tasks = {
     tasks: [{
         text: 'Grocery shopping',
@@ -16,9 +14,15 @@ const tasks = {
         text: 'Film course',
         completed: false
     }],
+
+    // Method: getTasksToDo
+    // Description: Returns an array of tasks that are not completed.
     getTasksToDo() {
-        return this.tasks.filter((task) => task.completed === false)
+        // Use the filter method to create a new array with only incomplete tasks
+        // Arrow function is used to check if the 'completed' property of each task is false
+        return this.tasks.filter((task) => task.completed === false);
     }
 }
 
-console.log(tasks.getTasksToDo())
+// Log the result of calling the getTasksToDo method
+console.log(tasks.getTasksToDo());
