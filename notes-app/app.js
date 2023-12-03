@@ -2,6 +2,14 @@ const chalk = require('chalk'); // Library for colorful console logs
 const yargs = require('yargs'); // Library for parsing command-line arguments
 const notes = require('./notes.js'); // Importing the notes module
 
+
+//node app.js add 
+//node app.js remove 
+//node app.js list
+//node app.js read --title="name" 
+
+
+
 // Customize yargs version
 yargs.version('1.1.0'); // Setting the version for the command-line tool
 

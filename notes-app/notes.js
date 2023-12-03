@@ -2,6 +2,9 @@
 const fs = require('fs');      // File System module for file operations
 const chalk = require('chalk'); // Library for colorful console logs
 
+//chalk works like style to let users know certain configs
+//green good
+//red bad
 // Function to add a new note
 const addNote = (title, body) => {
     const notes = loadNotes(); // Load existing notes from the file
