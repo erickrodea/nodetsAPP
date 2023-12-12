@@ -13,18 +13,27 @@ const notes = require('./notes.js'); // Importing the notes module
 // Customize yargs version
 yargs.version('1.1.0'); // Setting the version for the command-line tool
 
+/*
+Defining a command 'add' with specific configurations.
+command: The name of the command ('add').
+describe: A description of what the command does ('Add a new note').
+builder: Configuration for command arguments. In this case, it defines two arguments: 'title' and 'body'.
+handler: The function to be executed when the 'add' command is called. It retrieves arguments using argv and calls notes.addNote with the provided title and body.
+
+*/
+
 // Create add command
 yargs.command({
-    command: 'add', // Command name
+    command: 'add', // Command name to call on terminal
     describe: 'Add a new note', // Description of the command
     builder: { // Configuration for the command arguments
         title: {
-            describe: 'Note title',
+            describe: 'Note title', //name the title
             demandOption: true, // The title is required
             type: 'string'
         },
         body: {
-            describe: 'Note body',
+            describe: 'Note body',//name the body
             demandOption: true, // The body is required
             type: 'string'
         }

@@ -85,6 +85,7 @@ module.exports = {
     readNote: readNote
 }
 
+//without arrow functions
 // const getNotes = function () {
 //     return 'Your notes...'
 // }
