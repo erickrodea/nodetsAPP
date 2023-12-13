@@ -2,7 +2,8 @@ const path = require('path');
 const express = require('express');
 const hbs = require('hbs');
 const geocode = require('./utils/geocode')
-const forecast =require('./utils/forecast')
+const forecast = require('./utils/forecast')
+const cors =require('cors')
 
 const app = express();
 const publicDirectoryPath = path.join(__dirname, '../public');
@@ -15,6 +16,8 @@ app.set('view engine', 'hbs');
 app.set('views',viewsPath)
 app.use(express.static(publicDirectoryPath));
 hbs.registerPartials(partialsPath)
+app.use(cors());
+
 
 app.get('', (req, res) => {
     res.render('index', {
@@ -45,7 +48,7 @@ app.get('/weather', (req, res) => {
         })
     }
 
-    geocode(req.query.address, (error, { latitude, longitude, location }) => {
+    geocode(req.query.address, (error, { latitude, longitude, location } = {}) => {//set up empty object default value to prevent server from crashing
         if (error) {
             return res.send({ error })
         }
